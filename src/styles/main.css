@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.player-clock.active {
+  @apply ring-4 ring-green-500;
+}
+
+.player-clock.inactive {
+  @apply opacity-75;
+}
+
+.player-clock.timeout {
+  @apply ring-4 ring-red-500;
+}
+
+#slideshow {
+  @apply shadow-xl;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}

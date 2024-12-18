@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Show</title>
+    
+    <script type="module" crossorigin src="/assets/index-89c56356.js"></script>
+    <link rel="stylesheet" href="/assets/index-aceb22f5.css">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div id="app" class="min-h-screen flex flex-col items-center justify-center p-4">
+      <h1 class="text-4xl font-bold mb-8">Christmas Show</h1>
+      
+      <!-- Slideshow Container -->
+      <div class="mb-8 w-full max-w-2xl mx-auto">
+        <div class="flex justify-between items-center mb-4">
+          <select id="categorySelect" class="bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="default">Please choose a catergory</option>
+            <option value="classic">Classic Chess</option>
+            <option value="modern">Modern Games</option>
+            <option value="masters">Chess Masters</option>
+          </select>
+        </div>
+        <img id="slideshow" class="w-full h-full object-cover rounded-xl transition-opacity duration-50" 
+             src="/images/start.jpg" alt="Chess game">
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Player 1 Clock -->
+        <div id="player1" class="player-clock bg-gray-800 p-8 rounded-xl cursor-pointer">
+          <h2 class="text-xl mb-2">Player 1</h2>
+          <div class="time text-6xl font-mono">00:45</div>
+          <button id="pass1" class="mt-4 px-6 py-2 bg-yellow-600 hover:bg-yellow-700 rounded w-full">
+            Pass (-3s)
+          </button>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls flex flex-col gap-4 justify-center">
+          <button id="startBtn" class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded">
+            Start
+          </button>
+          <button id="resetBtn" class="px-6 py-2 bg-red-600 hover:bg-red-700 rounded">
+            Reset
+          </button>
+          <button id="settingsBtn" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded">
+            Settings
+          </button>
+        </div>
+
+        <!-- Player 2 Clock -->
+        <div id="player2" class="player-clock bg-gray-800 p-8 rounded-xl cursor-pointer">
+          <h2 class="text-xl mb-2">Player 2</h2>
+          <div class="time text-6xl font-mono">00:45</div>
+          <button id="pass2" class="mt-4 px-6 py-2 bg-yellow-600 hover:bg-yellow-700 rounded w-full">
+            Pass (-3s)
+          </button>
+        </div>
+      </div>
+
+      <!-- Settings Modal -->
+      <div id="settingsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-xl">
+          <h2 class="text-2xl mb-4">Settings</h2>
+          <div class="mb-4">
+            <label class="block mb-2">Time per player (minutes)</label>
+            <input type="number" id="timeInput" class="w-full p-2 bg-gray-700 rounded" value="10">
+          </div>
+          <div class="flex justify-end gap-2">
+            <button id="cancelSettings" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded">
+              Cancel
+            </button>
+            <button id="saveSettings" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
